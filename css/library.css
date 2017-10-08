@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    background-color: aqua;
+}
+
+button {
+  margin: .5rem 0 .5rem 0;
+}
+
+#container {
+    display:flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#inner-container {
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: bisque;
+    width: 15rem;
+    margin: 1rem 1rem 1rem 1rem;
+}
+
+#main-header {
+  display: flex;
+  flex-direction: column;
+}
+
+#sorting-buttons {
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+}
+
+#alphabetically {
+  display: flex;
+  flex-direction: column;
+  margin-right: 2rem;
+}
+
+#alphabetically > h3, button{
+  margin: .1rem 0 .1rem 0;
+}
+
+#era {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#era > h3, button{
+  margin: .1rem 0 .1rem 0;
+}
