@@ -41,21 +41,29 @@ let cloneObj = (obj) => {
     return clone;
 }
 
-let sortAscending = () => {
+let sortAscending = (first, second) => {
+  return (first < second) ? -1 : (first > second) ? 1 : 0;
+}
+
+let sortDescending = (first, second) => {
+  return (first < second) ? 1 : (first > second) ? -1 : 0;
+}
+
+let authorAscending = () => {
     let sortedLibrary = cloneObj(mainLibrary).sort((a, b) => {
         let first = a.author.toUpperCase();
         let second = b.author.toUpperCase();
-        return (first < second) ? -1 : (first > second) ? 1 : 0;
+        return sortAscending(first, second);
     });
 
     renderData(sortedLibrary);
 }
 
-let sortDescending = () => {
+let authorDescending = () => {
     let sortedLibrary = cloneObj(mainLibrary).sort((a, b) => {
         let first = a.author.toUpperCase();
         let second = b.author.toUpperCase();
-        return (first < second) ? 1 : (first > second) ? -1 : 0;
+        return sortDescending(first, second);
     });
 
     renderData(sortedLibrary);
@@ -68,7 +76,7 @@ let sortNineties = () => {
     sortedLibrary.sort((a, b) => {
         let first = a.year;
         let second = b.year;
-        return (first < second) ? -1 : (first > second) ? 1 : 0;
+        return sortAscending(first, second);
     });
     
     renderData(sortedLibrary);
@@ -81,7 +89,7 @@ let sortEightes = () => {
     sortedLibrary.sort((a, b) => {
         let first = a.year;
         let second = b.year;
-        return (first < second) ? -1 : (first > second) ? 1 : 0;
+        return sortAscending(first, second);
     });
     
     renderData(sortedLibrary);
@@ -94,7 +102,7 @@ let sortSeventies = () => {
     sortedLibrary.sort((a, b) => {
         let first = a.year;
         let second = b.year;
-        return (first < second) ? -1 : (first > second) ? 1 : 0;
+        return sortAscending(first, second);
     });
     
     renderData(sortedLibrary);
@@ -107,10 +115,15 @@ let sortSixtiesPrior = () => {
     sortedLibrary.sort((a, b) => {
         let first = a.year;
         let second = b.year;
-        return (first < second) ? -1 : (first > second) ? 1 : 0;
+        return sortAscending(first, second);
     });
     
     renderData(sortedLibrary);
+}
+
+let sortNA = () => {
+  let sortedLibrary = mainLibrary.filter(book => (book.year == false || book.year == null));
+  renderData(sortedLibrary);
 }
 
 let showfullLibrary = () => {
@@ -118,9 +131,9 @@ let showfullLibrary = () => {
     renderData(mainLibrary);
 }
 
-document.getElementById('ascending').addEventListener('click', sortAscending);
+document.getElementById('ascending').addEventListener('click',authorAscending);
 
-document.getElementById('descending').addEventListener('click', sortDescending);
+document.getElementById('descending').addEventListener('click', authorDescending);
 
 document.getElementById('nineties').addEventListener('click', sortNineties);
 
@@ -129,5 +142,7 @@ document.getElementById('eighties').addEventListener('click', sortEightes);
 document.getElementById('seventies').addEventListener('click', sortSeventies);
 
 document.getElementById('sixties-prior').addEventListener('click', sortSixtiesPrior);
+
+document.getElementById('na').addEventListener('click', sortNA);
 
 document.getElementById('full-library').addEventListener('click', showfullLibrary);
