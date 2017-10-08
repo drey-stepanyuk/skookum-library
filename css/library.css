@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Germania+One|Kalam');
+
+/* GENERAL */
+
 body {
     margin: 0;
+    font-family: 'Kalam';
 }
 
 header {
@@ -7,16 +12,22 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 40vh;
-    background-color: aqua;
+    height: 20rem;
+    background-color: #806443;
 }
 
 button {
-  margin: .5rem 0 .5rem 0;
+    border-radius: 60px;
+    border-color: #000;
+    font-family: 'Germania One';
+    background-image: linear-gradient(to bottom, #fff, #E0D3C0);
+    text-decoration: none;
 }
 
+/* MAIN CONTAINER */
+
 #container {
-    display:flex;
+    display: flex;
     justify-content: center;
     width: 100%;
 }
@@ -29,45 +40,123 @@ button {
     flex-wrap: wrap;
 }
 
+/* HEADER */
+#main-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    flex-direction: column;
+}
+
+#main-header > h1 {
+    font-family: 'Germania One';
+    font-size: 4rem;
+    margin-bottom: .5rem;
+}
+
+#main-header > button {
+    padding: .3rem 1.5rem .3rem 1.5rem;
+}
+
+#sorting-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    height: 50%;
+}
+
+#alphabetically {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
+#alphabetically > h3, button {
+    margin: 0;
+}
+
+#alphabetically > button {
+    padding: .3rem .2rem .3rem .2rem;
+}
+
+#era {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#era > h3, button {
+    margin: 0;
+}
+
+#era button {
+    padding: .3rem .6rem .3rem .6rem;
+}
+
+/* DYNAMIC BOOKS */
+
 .book-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: bisque;
     width: 15rem;
     margin: 1rem 1rem 1rem 1rem;
+    background-color: #806443;
+    color: antiquewhite;
+    border-radius: 20px;
+    border: 2px solid #000;
+    box-shadow:
+    4px 4px 0 #E0D3C0,
+    8px 8px 0 #E0D3C0,
+    14px 14px 0 #806443,
+    15px 15px 0 #000;
+    transition: all 1s ease;
 }
 
-#main-header {
-  display: flex;
-  flex-direction: column;
+.book-card:hover {
+    transform: scale(1.05, 1.05);
 }
 
-#sorting-buttons {
-  display: flex;
-  width: 100%;
-  max-width: 1000px;
+.book-card > h4 {
+    padding: 0 .2rem 0 .2rem;
+    border-bottom: 1px solid #fff;
+    color: #000;
+    font-family: 'Germania One';
+    font-weight: 400;
+    text-decoration: none;
 }
 
-#alphabetically {
-  display: flex;
-  flex-direction: column;
-  margin-right: 2rem;
+#card-year {
+    margin-bottom: 2rem;
 }
 
-#alphabetically > h3, button{
-  margin: .1rem 0 .1rem 0;
+/* SPANS */
+.desc{
+    color: #000;
+    font-family: 'Germania One';
 }
 
-#era {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+/* MEDIA BREAKS */
+@media screen and (max-width: 423px) {
+    #main-header > h1 {
+    font-size: 3rem;
+    }
 }
 
-#era > h3, button{
-  margin: .1rem 0 .1rem 0;
+@media screen and (max-width: 315px) {
+    #main-header > h1 {
+    font-size: 2rem;
+    }
 }
+
+
+

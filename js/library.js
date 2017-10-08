@@ -5,7 +5,7 @@ var mainLibrary = {};
 xhr.onload = function () {
     if (this.readyState === 4 && this.status === 200) {
         mainLibrary = JSON.parse(this.responseText);
-        renderData(mainLibrary);
+        renderData(mainLibrary.slice(0, 10));
     }
 };
 xhr.open('GET', url, true);
@@ -18,10 +18,10 @@ let renderData = (data) => {
         var bookCard =
             `
                 <div class="book-card">
-                    <p>${obj.title}</p>
-                    <p>${obj.author}</p>
-                    <p>ISBN: ${obj.isbn}</p>
-                    <p>Year: ${obj.year}</p>
+                    <h4>${obj.title}</h4>
+                    <p><span class="desc">By:</span> ${obj.author}</p>
+                    <p><span class="desc">ISBN:</span> ${obj.isbn}</p>
+                    <p id="card-year"><span class="desc">Year:</span> ${obj.year}</p>
                 </div>
 
             `
@@ -127,7 +127,6 @@ let sortNA = () => {
 }
 
 let showfullLibrary = () => {
-    console.table(mainLibrary);
     renderData(mainLibrary);
 }
 
