@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Germania+One|Kalam');
 
-/* GENERAL */
+/*================================================
+GENERAL
+================================================*/
 
 body {
     margin: 0;
@@ -14,6 +16,7 @@ header {
     align-items: center;
     height: 20rem;
     background-color: #806443;
+    background-image: url(http://www.transparenttextures.com/patterns/bright-squares.png);
 }
 
 button {
@@ -22,9 +25,12 @@ button {
     font-family: 'Germania One';
     background-image: linear-gradient(to bottom, #fff, #E0D3C0);
     text-decoration: none;
+    outline: none;
 }
 
-/* MAIN CONTAINER */
+/*================================================
+MAIN CONTAINER
+================================================*/
 
 #container {
     display: flex;
@@ -40,7 +46,9 @@ button {
     flex-wrap: wrap;
 }
 
-/* HEADER */
+/*================================================
+HEADER 
+================================================*/
 #main-header {
     display: flex;
     justify-content: center;
@@ -100,7 +108,9 @@ button {
     padding: .3rem .6rem .3rem .6rem;
 }
 
-/* DYNAMIC BOOKS */
+/*================================================
+BOOKS
+================================================*/
 
 .book-card {
     display: flex;
@@ -111,6 +121,7 @@ button {
     width: 15rem;
     margin: 1rem 1rem 1rem 1rem;
     background-color: #806443;
+    background-image: url(http://www.transparenttextures.com/patterns/leather.png);
     color: antiquewhite;
     border-radius: 20px;
     border: 2px solid #000;
@@ -139,13 +150,17 @@ button {
     margin-bottom: 2rem;
 }
 
-/* SPANS */
+/*================================================
+SPANS
+================================================*/
 .desc{
     color: #000;
     font-family: 'Germania One';
 }
 
-/* MEDIA BREAKS */
+/*================================================
+MEDIA BREAKS
+================================================*/
 @media screen and (max-width: 423px) {
     #main-header > h1 {
     font-size: 3rem;
@@ -157,6 +172,3 @@ button {
     font-size: 2rem;
     }
 }
-
-
-
