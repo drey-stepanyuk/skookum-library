@@ -13,39 +13,44 @@
 <body>
     <header>
 
-          <div id="main-header">
+        <div id="main-header">
             <h1>Skookum Library</h1>
             <button id="full-library">Show Full Library</button>
-          </div>
-            
-          <div id="sorting-buttons">
-            
+        </div>
+
+        <div id="sorting-buttons">
+
             <div id="alphabetically">
-              <h3>Sort Alphabetically</h3>
-              <button id="ascending">A-Z by Author</button>
-              <button id="descending">Z-A by Author</button>
+                <h3>Sort Alphabetically</h3>
+                <button id="ascending">A-Z by Author</button>
+                <button id="descending">Z-A by Author</button>
+            </div>
+
+            <div id="displayed-books">
+                <h3>Currently Displayed:</h3>
+                <h3><span id="book-count"></span> out of 100 books.</h3>
             </div>
 
             <div id="era">
-              <h3>Sort Books by Era</h3>
-              <div id="era-row-one">
-                <button id="nineties">90's</button>
-                <button id="eighties">80's</button>
-                <button id="seventies">70's</button>
-              </div>
-              <div id="era-row-two">
-                <button id="sixties-prior">60's &amp; Prior</button>
-                  <button id="na">N/A</button>
-              </div>
+                <h3>Filter Books by Era</h3>
+                <div id="era-row-one">
+                    <button id="nineties" class="era-button">90's</button>
+                    <button id="eighties" class="era-button">80's</button>
+                    <button id="seventies" class="era-button">70's</button>
+                </div>
+                <div id="era-row-two">
+                    <button id="sixties-prior" class="era-button">60's &amp; Prior</button>
+                    <button id="na">N/A</button>
+                </div>
             </div>
-            
-          </div>
+
+        </div>
 
     </header>
 
     <div id="container">
         <div id="inner-container">
-
+            <h1 id="loading">Loading library.....</h1>
         </div>
     </div>
 
