@@ -1,4 +1,7 @@
+// Different data services including rendering the data, cloning objects, and cleaning them
 const dataService = (() => {
+    
+    // Renders data inside of the html 
     let renderData = (data) => {
         let count = 0;
         var container =
@@ -39,6 +42,7 @@ const dataService = (() => {
         document.getElementById('book-count').innerHTML = count;
     };
 
+    // Cleans object for falsy data
     let cleanFalsyObj = (arr) => {
         arr.forEach(obj => {
             obj.title = cleanFalsyProp(obj.title);
@@ -47,7 +51,7 @@ const dataService = (() => {
             obj.year = cleanFalsyProp(obj.year);
         });
     }
-    
+
     let cleanFalsyProp = (prop) => {
         if (!prop) {
             return 'N/A';
@@ -55,7 +59,8 @@ const dataService = (() => {
             return prop;
         }
     }
-    
+
+    // Creates a copy of an object
     let cloneObj = (obj) => {
         let clone = obj.constructor();
         for (let attr in obj) {
@@ -70,5 +75,4 @@ const dataService = (() => {
         cleanFalsyProp: cleanFalsyProp,
         cloneObj: cloneObj
     };
-
 })();
