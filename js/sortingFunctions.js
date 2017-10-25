@@ -32,52 +32,28 @@ const sort = (() => {
         let sortedLibrary = mainLibrary.filter(book =>
             (book.year >= 1990 && book.year < 2000));
     
-        sortedLibrary.sort((a, b) => {
-            let first = a.year;
-            let second = b.year;
-            return sortAscending(first, second);
-        });
-    
-        dataService.renderData(sortedLibrary);
+        finishSort(sortedLibrary);
     };
     
     let sortEightes = () => {
         let sortedLibrary = mainLibrary.filter(book =>
             (book.year >= 1980 && book.year < 1990));
     
-        sortedLibrary.sort((a, b) => {
-            let first = a.year;
-            let second = b.year;
-            return sortAscending(first, second);
-        });
-    
-        dataService.renderData(sortedLibrary);
+        finishSort(sortedLibrary);
     };
     
     let sortSeventies = () => {
         let sortedLibrary = mainLibrary.filter(book =>
             (book.year >= 1970 && book.year < 1980));
     
-        sortedLibrary.sort((a, b) => {
-            let first = a.year;
-            let second = b.year;
-            return sortAscending(first, second);
-        });
-    
-        dataService.renderData(sortedLibrary);
+        finishSort(sortedLibrary);
     };
     
     let sortSixtiesPrior = () => {
         let sortedLibrary = mainLibrary.filter(book =>
             (book.year < 1970));
     
-        sortedLibrary.sort((a, b) => {
-            let first = a.year;
-            let second = b.year;
-            return sortAscending(first, second);
-        });
-    
-        dataService.renderData(sortedLibrary);
+        finishSort(sortedLibrary);
     };
     
     let sortNA = () => {
@@ -87,6 +63,16 @@ const sort = (() => {
     
     let showfullLibrary = () => {
         dataService.renderData(mainLibrary);
+    };
+
+    let finishSort = (sortedLibrary) => {
+        sortedLibrary.sort((a, b) => {
+            let first = a.year;
+            let second = b.year;
+            return sortAscending(first, second);
+        });
+    
+        dataService.renderData(sortedLibrary);
     };
 
     return {
