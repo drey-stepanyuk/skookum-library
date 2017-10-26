@@ -1,6 +1,5 @@
 // Different data services including rendering the data, cloning objects, and cleaning them
 const dataService = (() => {
-    
     // Renders data inside of the html 
     let renderData = (data) => {
         let count = 0;
@@ -50,7 +49,7 @@ const dataService = (() => {
             obj.isbn = cleanFalsyProp(obj.isbn);
             obj.year = cleanFalsyProp(obj.year);
         });
-    }
+    };
 
     let cleanFalsyProp = (prop) => {
         if (!prop) {
@@ -58,7 +57,7 @@ const dataService = (() => {
         } else {
             return prop;
         }
-    }
+    };
 
     // Creates a copy of an object
     let cloneObj = (obj) => {
@@ -67,12 +66,19 @@ const dataService = (() => {
             if (obj.hasOwnProperty(attr)) clone[attr] = obj[attr];
         }
         return clone;
-    }
+    };
+
+    const renderJson = (responseText) => {
+		mainLibrary = JSON.parse(responseText);
+		dataService.cleanFalsyObj(mainLibrary);
+		dataService.renderData(mainLibrary.slice(0, 10));
+	};
 
     return {
         renderData: renderData,
         cleanFalsyObj: cleanFalsyObj,
         cleanFalsyProp: cleanFalsyProp,
-        cloneObj: cloneObj
+        cloneObj: cloneObj,
+        renderJson: renderJson
     };
 })();

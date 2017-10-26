@@ -2,7 +2,12 @@
     const url = "https://skookum-test-api.herokuapp.com/api/v1/books";
     
     // Main library object that gets rendered to the page
-    let mainLibrary = xmlRequest.renderJson(url);
+    let mainLibrary = {};
+    
+    xmlRequest.makeRequest(url)
+    .catch((error) => {
+        console.log(error);
+    });
 
     // Receives element ID and then calls the appropriate sorting/filter function 
     let clickButton = (but) => {
@@ -40,7 +45,4 @@
     document.querySelector('header').addEventListener('click', (event) => {
         clickButton(event.target.id);
     });
-
-
-
 })();
